@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Resume</title>
+  <link rel="stylesheet" href="cv.css" />
+</head>
+<body>
+  <div class="text-center mt-4">
+    <button id="download-cv" class="btn btn-primary">
+      <i class="fas fa-download"></i> Download CV as PDF
+    </button>
+  </div>
+
+  <div class="cv-container">
+    <header>
+      <h1 id="name"></h1>
+      <p id="title"></p>
+    </header>
+
+    <section class="section about">
+      <h2>About Me</h2>
+      <p id="about-text"></p>
+    </section>
+
+    <section class="section">
+      <h2>Contact</h2>
+      <ul>
+        <li><strong>Phone:</strong> <span id="phone"></span></li>
+        <li><strong>Email:</strong> <a href="#" id="email-link"></a></li>
+        <li><strong>LinkedIn:</strong> <a href="#" id="linkedin-link"></a></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      <p id="education-text"></p>
+    </section>
+
+    <section class="section">
+      <h2>Projects</h2>
+      <ul id="projects-list"></ul>
+    </section>
+
+    <section class="section">
+      <h2>Certificates</h2>
+      <ul id="certificates-list"></ul>
+    </section>
+
+    <section class="section">
+      <h2>Skills</h2>
+      <ul id="skills-list"></ul>
+    </section>
+
+    <section class="section">
+      <h2>References</h2>
+      <ul id="references-list"></ul>
+    </section>
+
+    <footer>
+      <p class="mt-3">
+        &copy; <span id="year"></span> All Rights Reserved. | <span id="footer-name">Your Name</span>
+      </p>
+    </footer>
+  </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+   
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    fetch("data.json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("name").textContent = data.name;
+        document.getElementById("title").textContent = data.title;
+        document.getElementById("about-text").textContent = data.about;
+
+        document.getElementById("phone").textContent = data.contact.phone;
+        document.getElementById("email-link").textContent = data.contact.email;
+        document.getElementById("email-link").href = "mailto:" + data.contact.email;
+        document.getElementById("linkedin-link").textContent = data.contact.linkedin;
+        document.getElementById("linkedin-link").href = data.contact.linkedin;
+
+        document.getElementById("education-text").textContent = data.education;
+
+        const projectsList = document.getElementById("projects-list");
+        data.projects.forEach(p => {
+          const li = document.createElement("li");
+          li.innerHTML = "<strong>" + p.name + ":</strong> " + p.description;
+          projectsList.appendChild(li);
+        });
+
+        const certList = document.getElementById("certificates-list");
+        data.certificates.forEach(c => {
+          const li = document.createElement("li");
+          li.textContent = c;
+          certList.appendChild(li);
+        });
+
+        const skillsList = document.getElementById("skills-list");
+        data.skills.forEach(s => {
+          const li = document.createElement("li");
+          li.textContent = s;
+          skillsList.appendChild(li);
+        });
+
+        const refList = document.getElementById("references-list");
+        data.references.forEach(r => {
+          const li = document.createElement("li");
+          li.innerHTML = "<strong>" + r.name + "</strong> – " + r.email;
+          refList.appendChild(li);
+        });
+      });
+
+    document.getElementById("download-cv").addEventListener("click", () => {
+      const element = document.querySelector(".cv-container");
+      const originalBg = element.style.backgroundColor;
+
+    
+      const opt = {
+        margin: 0.5,
+        filename: 'cv.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#ffffff'
+        },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      };
+
+      element.style.backgroundColor = "#ffffff";
+
+      html2pdf().set(opt).from(element).save().then(() => {
+        element.style.backgroundColor = originalBg;
+      });
+    });
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>

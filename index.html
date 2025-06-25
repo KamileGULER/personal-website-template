@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio</title>
+  <meta name="keywords" content="Programming, CV, Portfolio, Software Developer"/>
+  <meta name="description" content="Dynamic Portfolio Template"/>
+  <meta name="author" content="Your Name">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="bg-dark-blue">
+    <div class="container">
+      <nav id="navbar">
+        <div class="logoAndHeader">
+          <div class="logo-title">
+            <img id="logo" src="favicon.ico" alt="logo">
+            <h1 class="heading-small" id="site-owner-name">Your Name</h1>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="nav-menu">
+    <button class="nav-toggle" type="button" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="menu-items">
+      <a href="#home" class="menu-item"><i class="fas fa-home"></i> Home</a>
+      <a href="#motivation" class="menu-item"><i class="fas fa-lightbulb"></i> Motivation</a>
+      <a href="#projects" class="menu-item"><i class="fas fa-code"></i> Projects</a>
+      <a href="cv.html" class="menu-item" target="_blank"><i class="fas fa-file-alt"></i> Resume</a>
+      <a href="#contact" class="menu-item"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+  </div>
+
+  <section id="home">
+    <img id="profile-pic" src="profile.jpg" alt="Profile Picture" />
+    <div class="name text-center">
+      <h2 class="heading-big" id="home-name">Your Name</h2>
+      <p class="lead" id="home-title">Your Role</p>
+      <div class="social-icons mt-3" id="social-links">
+        <a href="https://instagram.com" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://x.com" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="motivation" class="bg-dark-blue">
+    <h3 class="text-center heading-medium">Motivation Letter</h3>
+    <div class="container">
+      <p id="motivation-text" style="color: white; text-align: center; max-width: 800px; margin: auto;"></p>
+    </div>
+  </section>
+
+  
+<section id="projects">
+  <div class="projects-container">
+    <h3 class="text-center heading-medium">Projects</h3>
+    <div id="projects-content"></div>
+  </div>
+</section>
+
+
+  <section id="contact" class="bg-light">
+    <div class="contact text-center">
+      <h3 class="heading-medium">Contact</h3>
+      <p>You can reach out to me via email below.</p>
+      <a href="#" id="email-link" class="contact-button">
+        <i class="fas fa-envelope"></i> Send E-Mail
+      </a>
+    </div>
+  </section>
+
+<footer class="bg-dark-blue white">
+  <p>Find me on social media</p>
+  <div class="social-icons" id="footer-social">
+    <a href="https://instagram.com" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://x.com" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://facebook.com" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+  <p class="mt-3">
+    &copy; <span id="year"></span> All Rights Reserved. | <span id="footer-name">Your Name</span>
+  </p>
+</footer>
+
+<script src="index.js"></script>
+
+</body>
+</html>

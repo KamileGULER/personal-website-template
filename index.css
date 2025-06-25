@@ -1,0 +1,606 @@
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables for colors */
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+    --light-blue: #336ea2;
+}
+
+/* Basic body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    padding-top: 80px;
+}
+
+/* Text utilities */
+.text-center {
+    text-align: center;
+}
+
+.white {
+    color: white;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+/* Navigation bar */
+#navbar {
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 80px;
+    background: var(--primary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+/* Logo ve baslıkk container */
+.logoAndHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Navigation menu */
+.nav-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+/* Menu items */
+.menu-items {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: var(--primary-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 200px;
+    display: none;
+    z-index: 10000;
+}
+
+.menu-items.show {
+    display: block;
+}
+
+.menu-item {
+    color: var(--text-light);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin: 0.25rem 0;
+}
+
+.menu-item:hover {
+    background: var(--secondary-color);
+}
+
+.menu-item i {
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Logo styling */
+#logo {
+    height: 40px;
+    border-radius: 50%;
+}
+
+#logo:hover {
+    transform: scale(1.1);
+}
+
+/* Headings */
+.heading-small {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.heading-medium {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.heading-big {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+/* Colors */
+.bg-dark-blue {
+    background: var(--primary-color);
+}
+
+.bg-light-blue {
+    background: var(--light-blue);
+}
+
+.bg-light {
+    background: #fff;
+}
+
+/* Home section */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('profile.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-top: -80px;
+}
+
+#home img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid var(--text-light);
+    margin-bottom: 2rem;
+}
+
+#home img:hover {
+    transform: scale(1.05);
+}
+
+/* Projects section */
+#projects {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projects i{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 40px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projects-container h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+}
+
+.projects .project-title {
+    color: var(--text-light);
+    font-size: 24px;
+    margin-bottom: 15px;
+}   
+
+.projects {
+    background-color: var(--primary-color);
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+.projects:hover {
+    transform: translateY(-10px);
+}
+
+.project-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+    background: var(--accent-color);
+}
+
+/* About section */
+#about {
+    padding: 4rem 2rem;
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.item {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.item ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.item ul li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.motivation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Contact section */
+#contact {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.contact {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact h3 {
+    color: var(--text-dark);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: var(--text-dark);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 40px;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+.contact-button:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.contact-button i {
+    margin-right: 10px;
+}
+
+/* Motivation section */
+#motivation {
+    padding: 4rem 2rem;
+    background: var(--primary-color);
+    text-align: center;
+    color: var(--text-light);
+}
+
+.motivation-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.read-more-btn {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.lang-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    color: var(--text-light);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    z-index: 2;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.motivation_container_TR, .motivation_container_EN {
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.motivation_container_TR:hover, .motivation_container_EN:hover {
+    transform: translateY(-5px);
+}
+
+.motivation_container_TR h3, .motivation_container_EN h3 {
+    color: var(--text-light);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.motivation_container_TR p, .motivation_container_EN p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 2rem;
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: var(--text-light);
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* Buttons */
+.btn {
+    margin-top: 1.25rem;
+    padding: 0.8rem 3rem;
+    border-radius: 7px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--light-blue);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    color: var(--text-light);
+    background: transparent;
+    border: 1px solid var(--light-blue);
+}
+
+.btn-dark {
+    background: #333;
+    color: var(--text-light);
+}
+
+.btn-dark:hover {
+    color: #333;
+    background: #fff;
+    border: 0.5px solid #333;
+}
+
+.btn-block {
+    width: 100%;
+    text-align: center;
+}
+
+/* Forms */
+.form-group {
+    padding: 0.25rem 0;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1rem;
+    resize: none;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .items {
+        flex-direction: column;
+    }
+    
+    .item {
+        width: 100%;
+    }
+    
+    .projects {
+        width: 100%;
+    }
+    
+    #home img {
+        max-width: 150px;
+    }
+    
+    .heading-big {
+        font-size: 2rem;
+    }
+    
+    .project-tags {
+        justify-content: center;
+    }
+    
+    .tag {
+        font-size: 0.7rem;
+    }
+    
+    .social-icons a {
+        font-size: 1.2rem;
+        margin: 0 5px;
+    }
+    
+    #contact {
+        padding: 40px 15px;
+    }
+    
+    .contact h3 {
+        font-size: 24px;
+    }
+    
+    .contact p {
+        font-size: 16px;
+    }
+    
+    .contact-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    #projects {
+        padding: 60px 0;
+    }
+    
+    .projects-container {
+        padding: 20px;
+        gap: 30px;
+    }
+    
+    .projects-container h3 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .projects {
+        width: 100%;
+        max-width: 350px;
+        padding: 25px;
+    }
+}

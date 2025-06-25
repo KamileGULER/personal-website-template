@@ -1,0 +1,85 @@
+{
+  "name": "Name & Surname",
+  "title": "Your Occupation",
+  "about": "A short paragraph about yourself, your background or passions.",
+  "motivation": "This is a detailed motivation letter describing your academic journey, technical skills, interests, and career goals. You can highlight why you’re passionate about your field and what you’re aiming to achieve.",
+  "contact": {
+    "phone": "0500 000 00 00",
+    "email": "example@example.com",
+    "linkedin": "https://linkedin.com/in/user"
+  },
+  "socials": [
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/yourprofile",
+      "icon": "fab fa-instagram"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/yourusername",
+      "icon": "fab fa-github"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/yourhandle",
+      "icon": "fab fa-twitter"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://facebook.com/yourprofile",
+      "icon": "fab fa-facebook"
+    }
+  ],
+  "education": "University and Department",
+  "projects": [
+    {
+      "name": "Project 1",
+      "description": "Write a description here.",
+      "tags": [
+        "Add tags here",
+        "NLP",
+        "Web Development"
+      ]
+    },
+    {
+      "name": "Project 2",
+      "description": "Write a description here.",
+      "tags": [
+        "Innovation",
+        "Teamwork"
+      ]
+    },
+    {
+      "name": "Project 3",
+      "description": "Write a description here.",
+      "tags": [
+        "Add tags here",
+        "NLP",
+        "Web Development"
+      ]
+    }
+  ],
+  "certificates": [
+    "Certificate 1 - Year",
+    "Certificate 2 - Year",
+    "Certificate 3 - Year"
+  ],
+  "skills": [
+    "List here the programming languages, tools, or soft skills you have.",
+    "For example: Python",
+    "Java",
+    "C",
+    "English – Intermediate (B2)",
+    "HTML, CSS, JavaScript"
+  ],
+  "references": [
+    {
+      "name": "Reference Name",
+      "email": "reference@example.com"
+    },
+    {
+      "name": "Another Reference",
+      "email": "reference@mail.com"
+    }
+  ]
+}
